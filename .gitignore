@@ -1,3 +1,7 @@
+#
+
+data/
+model.pth
 
 # Configs and keys
 ch05/07_gpt_to_llama/config.json
