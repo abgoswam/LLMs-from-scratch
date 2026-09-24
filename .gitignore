@@ -94,6 +94,9 @@ ch06/01_main-chapter-code/gpt2
 ch06/02_bonus_additional-experiments/gpt2
 ch06/03_bonus_imdb-classification/gpt2
 
+oai_2_custom_2_hf/gpt2
+oai_2_custom_2_hf/out
+
 ch07/01_main-chapter-code/gpt2-medium355M-sft-baseline.pth
 ch07/01_main-chapter-code/gpt2-medium355M-sft-mask-instructions.pth
 ch07/01_main-chapter-code/gpt2-medium355M-sft-phi3-prompt.pth
