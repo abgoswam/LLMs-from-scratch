@@ -8,7 +8,7 @@ learning, not coverage: keep the suite small and free of noise.
 
 ```
 trials/chNN/
-  <module>.py                 # stubs I implement (book's API only)
+  <module>.py                 # stubs I implement (book's API + spec docstrings)
   test_01_<topic>.py          # numbered in notebook order
   test_02_<topic>.py
   conftest.py                 # shared fixtures (e.g. raw_text, gpt2_tokenizer)
@@ -37,6 +37,10 @@ trials/chNN/
 8. **Randomness:** use the author's `torch.manual_seed(...)` and exact values if the notebook
    shows them; otherwise assert shapes/invariants.
 9. **Style:** bare asserts, descriptive test names, minimal comments.
+10. **Each stub's docstring is its spec.** Name the notebook section and state, in words
+    (never code), every detail the tests depend on that the signature doesn't reveal:
+    layer sizes, attribute names, construction order (matters under a seed), return types.
+    I should be able to implement the stub from the docstring alone and pass the tests.
 
 ## Before handing over
 
