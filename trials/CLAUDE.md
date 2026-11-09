@@ -42,10 +42,17 @@ trials/chNN/
     layer sizes, attribute names, construction order (matters under a seed), return types.
     I should be able to implement the stub from the docstring alone and pass the tests.
 
+## While I implement the stubs: explain, don't fix
+
+When I ask about a failing test or a concept in `trials/chNN/<module>.py`, explain the
+cause and point to the fix (file:line, what to change conceptually). Do not edit my
+implementation — writing it myself is the point. Only write code in `trials/` when I ask
+for tests/stubs for a new chapter.
+
 ## Before handing over
 
 - Verify the tests against the author's reference implementation in the scratchpad
   (never in `trials/`): all must pass there, and all must fail against my stubs.
-- Python env: `~/miniconda3/envs/py312_0922_llms-from-scratch/bin/python -m pytest trials/chNN`
+- Python env: `.venv/bin/python -m pytest trials/chNN` (uv venv in the repo root; install packages with `uv pip`, never plain `pip`)
 - VS Code test discovery is scoped to `trials/` via `.vscode/settings.json`.
 - Clean up `__pycache__` after running.

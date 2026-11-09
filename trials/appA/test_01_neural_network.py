@@ -10,6 +10,10 @@ def test_neural_network_trainable_parameter_count():
     num_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
     assert num_params == 2213
 
+    # trials
+    for name, p in model.named_parameters():
+        print(name, p.shape, p.numel())
+
 
 def test_neural_network_seeded_forward_pass():
     torch.manual_seed(123)

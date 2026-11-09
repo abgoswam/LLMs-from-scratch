@@ -1,7 +1,7 @@
 """Section A.5: NeuralNetwork."""
 
 import torch
-
+import torch.nn as nn
 
 class NeuralNetwork(torch.nn.Module):
     """Multilayer perceptron with two hidden layers.
@@ -14,7 +14,25 @@ class NeuralNetwork(torch.nn.Module):
 
     def __init__(self, num_inputs, num_outputs):
         super().__init__()
-        raise NotImplementedError
+
+        self.num_inputs = num_inputs
+        self.num_outputs = num_outputs
+
+        # raise NotImplementedError
+        self.layers = nn.Sequential(
+            nn.Linear(num_inputs, 30),
+            nn.ReLU(),
+            nn.Linear(30, 20),
+            nn.ReLU(),
+            nn.Linear(20, num_outputs)
+        )
 
     def forward(self, x):
-        raise NotImplementedError
+        # raise NotImplementedError
+
+        assert self.num_inputs == x.shape[1]
+
+        logits = self.layers(x)
+
+        assert self.num_outputs == logits.shape[1]
+        return logits
