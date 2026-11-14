@@ -19,6 +19,10 @@ def test_toy_dataset_shuffled_batches(X_train, y_train):
     torch.manual_seed(123)
     train_loader = DataLoader(dataset=train_ds, batch_size=2, shuffle=True, num_workers=0)
 
+    # for item in train_loader:
+    #     print(item)
+    #     break
+
     batches = [(x, y.tolist()) for x, y in train_loader]
     assert [y for _, y in batches] == [[1, 0], [0, 0], [1]]
     assert torch.allclose(batches[0][0], torch.tensor([[2.3, -1.1], [-0.9, 2.9]]))

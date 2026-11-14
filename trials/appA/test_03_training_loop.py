@@ -51,6 +51,7 @@ def test_trained_model_outputs(trained_model, X_train):
     trained_model.eval()
     with torch.no_grad():
         outputs = trained_model(X_train)
+        
     expected = torch.tensor([
         [2.8569, -4.1618],
         [2.5382, -3.7548],

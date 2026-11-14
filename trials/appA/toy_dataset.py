@@ -12,10 +12,15 @@ class ToyDataset(Dataset):
     """
 
     def __init__(self, X, y):
-        raise NotImplementedError
+        # raise NotImplementedError
+        self.X = X
+        self.y = y
 
     def __getitem__(self, index):
-        raise NotImplementedError
+        # raise NotImplementedError
+        return (self.X[index], self.y[index])
 
     def __len__(self):
-        raise NotImplementedError
+        # raise NotImplementedError
+        return len(self.X)
+
